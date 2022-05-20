@@ -43,7 +43,7 @@ fn identifier(input: &str) -> ParseResult<String> {
         _ => return Err(input),
     }
 
-    while let Some(next) = chars.next() {
+    for next in chars {
         if next.is_alphabetic() || next == '-' {
             matched.push(next);
         } else {
